@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { WebRouter, AdminRouter } from "./router";
+import { AuthProvider } from "./contexts";
 
 export default function App() {
   return (
-    <div>
-      <h1>Testing front-end</h1>
-    </div>
-  )
+    <AuthProvider>
+      <BrowserRouter>
+        <WebRouter />
+        <AdminRouter />
+      </BrowserRouter>
+    </AuthProvider>
+  );
 }
